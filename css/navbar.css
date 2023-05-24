@@ -1,0 +1,178 @@
+@font-face { font-family: Almarai; src: url('../fonts/almarai.ttf'); }
+@font-face { font-family: Raleway; src: url('../fonts/raleway.ttf'); }
+body{
+    margin: 0;
+    overscroll-behavior-y: none;
+}
+.loginformcontainer{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+}
+.loginform{
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Almarai";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(1.25);
+    width: 380px;
+    padding: 20px 30px;
+    background: #fff;
+    filter: drop-shadow(0 0 6px #666666);
+    border-radius: 10px;
+}
+.loginform .close-btn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 15px;
+    height: 15px;
+    background: #888;
+    color: #eee;
+    text-align: center;
+    line-height: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.loginform .form h2{
+    text-align: center;
+    color: #222;
+    margin: 10px 0px 20px;
+    font-size: 25px;
+}
+.loginform .form .form-element{
+    margin: 15px 0px;
+    margin-right: 20px;
+}
+.loginform .form .form-element label{
+    font-size: 14px;
+    color: #222;
+}
+.loginform .form .form-element input[type="text"],.loginform .form .form-element input[type="password"]{
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+.loginform .form .form-element input[type="checkbox"]{
+    margin-right: 5px;
+}
+.loginform .form .form-element button{
+    width: 107%;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: #222;
+    color: #f5f5f5;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.loginform .form .form-element a{
+    text-align: left;
+    font-size: 15px;
+    color: #1a79ca;
+    text-decoration: none;
+    font-weight: 600;
+}
+.container1 div{
+    float: left;
+    position: relative;
+}
+.container1{
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    z-index: 50;
+    box-shadow: 0 0 8px;
+}
+#logo{
+    width: 18%;
+    height: 100%;
+    overflow: hidden;
+}
+#logo img{
+    width: 60%;
+    padding-left: 12px;
+    padding-bottom: 10px;
+}
+#blank{
+    width: 26%;
+    height: 80px;
+}
+#navbar{
+    width: 31%;
+    height: 80px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+#navbar:hover a{
+    color: gray;
+    transition: .5s;
+}
+#navbar li{
+    float: left;
+    list-style-type: none;
+    margin-top: 7px;
+    padding: 10px;
+    font-family: Almarai;
+    font-size: 17px;
+}
+#navbar li a{
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+#navbar li a:hover{
+    color: black;
+    transition: .5s;
+}
+#search{
+    width: 16%;
+    height: 80px;
+    overflow: hidden;
+}
+#search input[type=text] {
+    padding: 6px;
+    width: 180px;
+    height: 20px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 26px;
+    margin-left: 20px;
+    font-family: Raleway;
+    font-weight: bold;
+    font-size: 13px;
+    background-color: #ededed;
+}
+#images{
+    width: 9%;
+    height: 80px;
+    overflow: hidden;
+}
+#images input{
+    margin-top: 16px;
+    padding: 10px;
+    width: 22%;
+}
+#images img{
+    margin-top: 16px;
+    padding: 10px;
+    width: 22%;
+}
+#logo, #blank, #navbar, #images, #search{
+    background-color: white;
+}
