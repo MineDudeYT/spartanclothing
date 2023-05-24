@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Spartan Clothing</title>
+    <link rel="icon" href="../images/logo.jpeg">
+    <link rel="shortcut icon" href="../images/logo.jpeg">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <style>
+        body{
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .container2{
+            padding-top: 95px;
+            width: 100%;
+            height: 100%;
+        }
+        .frame{
+            width: 100%;
+            height: 400px;
+            margin-left: calc((100% - 650px) / 2);
+            margin-top: 50px;
+        }
+        iframe{
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
+        .box{
+            background-color: white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            border-radius: 15px;
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 50px;
+            margin-left: calc((100% - 60%) / 2);
+            overflow: hidden;
+            height: 100px;
+            width: 60%;
+            font-size: 25px;
+            font-family: Raleway;
+            font-weight: 4000;
+        }
+        .box label{
+            font-size: 35px;
+            font-family: Almarai;
+            font-weight: 900;
+        }
+    </style>
+    <script>
+        history.scrollRestoration = "manual";
+
+        window.onload = function () {
+            window.scrollTo(0, 0);
+        }
+
+        function clearinput(){
+            document.getElementById("searchbar").value = "";
+        }
+
+        function closeForm(){
+            document.getElementById('loginformcontainer').style.display='none';
+            document.getElementById("user").value = "";
+            document.getElementById("pass").value = "";
+        }
+
+        function checkForm(){
+            if(document.getElementById("user").value == "Ryker"){
+            if(document.getElementById("pass").value == "1234"){
+                document.getElementById('loginformcontainer').style.display='none';
+                document.getElementById("user").value = "";
+                document.getElementById("pass").value = "";
+                alert("Success, you're logged in!");
+            }
+            else{
+                document.getElementById("user").value = "";
+                document.getElementById("pass").value = "";
+                alert("Error, password is incorrect!");
+            }
+            }
+            else{
+            document.getElementById("user").value = "";
+            document.getElementById("pass").value = "";
+            alert("Error, username is incorrect!");
+            }
+        }
+</script>
+</head>
+<body>
+    <div id="loginformcontainer" class="loginformcontainer">
+        <div id="loginform" class="loginform">
+            <div class="close-btn" onclick="closeForm()">&times;</div>
+            <div class="form">
+                <h2>Log in</h2>
+                <div class="form-element">
+                    <label for="user">Username</label>
+                    <input type="text" id="user" placeholder="Enter username">
+                </div>
+                <div class="form-element">
+                    <label for="pass">Password</label>
+                    <input type="password" id="pass" placeholder="Enter password">
+                </div>
+                <div class="form-element">
+                    <input type="checkbox" id="rememberme">
+                    <label for="rememberme">Remember me</label>
+                </div>
+                <div class="form-element">
+                    <button onclick="checkForm()">Sign in</button>
+                </div>
+                <div class="form-element">
+                    <a href="#">Forgot password?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container1">
+        <div id="logo">
+            <img src="../images/banner.jpeg" alt="logo" />
+        </div>
+        <div id="blank">
+        </div>
+        <div id="navbar">
+            <ul>
+                <li><a href="../Index.html" id="home">Home</a></li>
+                <li><a href="Shop.html" id="shop">Shop</a></li>
+                <li><a href="About.html" id="about">About</a></li>
+                <li><a href="#" id="location">Location</a></li>
+                <li><a href="Contact.html" id="contact">Contact</a></li>
+            </ul>
+        </div>
+        <div id="search">
+            <form name="searchform" onsubmit="clearinput(); return false">
+            <input type="text" id="searchbar" placeholder="Search...">
+            </form>
+        </div>
+        <div id="images">
+            <input type="image" id="avatar" src="../images/avatar.jpeg" onclick="document.getElementById('loginformcontainer').style.display='block'"/>
+            <a href="Checkout.html"><img id="cart" src="../images/shoppingbag.jpeg" alt="Shopping cart"></a>
+        </div>
+    </div>
+    <div class="container2">
+            <div class="frame">
+                <iframe style='width:650px; height:400px;' id='gmap_canvas' src='https://maps.google.com/maps?q=1100+Performance+Pl,+Youngstown,+OH+44502&ie=UTF8&output=embed' frameborder='0' scrolling='no' marginheight='0' marginwidth='0'></iframe>
+            </div>
+            <div class="box">
+                <label for="address">Our Address :</label>
+                <br><span id="address">1100 Performance Place, Youngstown, OH 44502</span>
+            </div>
+    </div>
+</body>
+</html>

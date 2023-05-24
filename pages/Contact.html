@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Spartan Clothing</title>
+    <link rel="icon" href="../images/logo.jpeg">
+    <link rel="shortcut icon" href="../images/logo.jpeg">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <style>
+        body{
+            background-color: #fff;
+        }
+        .container2{
+            padding-top: 85px;
+            width: 100%;
+        }
+        .contacttable{
+            margin-left: auto;
+            margin-right: auto;
+            width: 800px;
+            height: 650px;
+            background-color: #ffffff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            border-radius: 10px;
+        }
+        .contacttable h1{
+            font-family: Almarai;
+            font-size: 45px;
+            text-align: center;
+            padding-top: 20px;
+        }
+        label{
+            font-family: Almarai;
+            font-size: 18px;
+            padding: 15px 0;
+        }
+        #name, #phone, #email{
+            width: 300px;
+            height: 30px;
+            font-size: 15px;
+            padding-left: 8px;
+            margin-top: 5px;
+            font-family: Raleway;
+            text-align: center;
+            border: 1px black solid;
+            border-radius: 8px;
+        }
+        #method label{
+            font-size: 15px;
+            font-family: Raleway;
+        }
+        .box{
+            float: left;
+            position: relative;
+            margin-top: 10px;
+        }
+        #box1{
+            width: 50%;
+            text-align: center;
+        }
+        #box1 div{
+            padding: 15px;
+        }
+        #box2{
+            width: 50%;
+            text-align: center;
+        }
+        #box2 div{
+            padding: 15px;
+        }
+        .textinput{
+            margin-left: 43px;
+            display: inline-block;
+            margin-top: 25px;
+        }
+        .textinput textarea{
+            width: 692px;
+            height: 200px;
+            padding: 10px;
+            font-size: 15px;
+            font-family: Raleway;
+            border-radius: 8px;
+            margin-top: 5px;
+        }
+        .submit{
+            width: 700px;
+            padding-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .submit-btn{
+            display: inline-block;
+            width: 692px;
+            padding: 12px;
+            font-size: 17px;
+            background: #fff;
+            border: 2px black solid;
+            border-radius: 10px;
+            color:black;
+            margin-top: 8px;
+            cursor: pointer;
+            font-family: "Almarai";
+        }
+        .submit-btn:hover{
+            background: #eeeeee;
+        }
+    </style>
+    <script>
+        history.scrollRestoration = "manual";
+
+        window.onload = function () {
+            window.scrollTo(0, 0);
+        }
+
+        function clearinput(){
+            document.getElementById("searchbar").value = "";
+        }
+        function checkBoxes(){
+            if(document.getElementById("method1").checked == false && document.getElementById("method2").checked == false){
+                event.preventDefault();
+                alert("Error, please check at least one box!");
+            }
+            else{
+                alert("Success! You should receive a reply within 2-3 business days.");
+            }
+        }
+        function closeForm(){
+            document.getElementById('loginformcontainer').style.display='none';
+            document.getElementById("user").value = "";
+            document.getElementById("pass").value = "";
+        }
+        function checkForm(){
+            if(document.getElementById("user").value == "Ryker"){
+            if(document.getElementById("pass").value == "1234"){
+                document.getElementById('loginformcontainer').style.display='none';
+                document.getElementById("user").value = "";
+                document.getElementById("pass").value = "";
+                alert("Success, you're logged in!");
+            }
+            else{
+                document.getElementById("user").value = "";
+                document.getElementById("pass").value = "";
+                alert("Error, password is incorrect!");
+            }
+            }
+            else{
+            document.getElementById("user").value = "";
+            document.getElementById("pass").value = "";
+            alert("Error, username is incorrect!");
+            }
+        }
+</script>
+</head>
+<body>
+    <div id="loginformcontainer" class="loginformcontainer">
+        <div id="loginform" class="loginform">
+            <div class="close-btn" onclick="closeForm()">&times;</div>
+            <div class="form">
+                <h2>Log in</h2>
+                <div class="form-element">
+                    <label for="user">Username</label>
+                    <input type="text" id="user" placeholder="Enter username">
+                </div>
+                <div class="form-element">
+                    <label for="pass">Password</label>
+                    <input type="password" id="pass" placeholder="Enter password">
+                </div>
+                <div class="form-element">
+                    <input type="checkbox" id="rememberme">
+                    <label for="rememberme">Remember me</label>
+                </div>
+                <div class="form-element">
+                    <button onclick="checkForm()">Sign in</button>
+                </div>
+                <div class="form-element">
+                    <a href="#">Forgot password?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container1">
+        <div id="logo">
+            <img src="../images/banner.jpeg" alt="logo" />
+        </div>
+        <div id="blank">
+        </div>
+        <div id="navbar">
+            <ul>
+                <li><a href="../Index.html" id="home">Home</a></li>
+                <li><a href="Shop.html" id="shop">Shop</a></li>
+                <li><a href="About.html" id="about">About</a></li>
+                <li><a href="Location.html" id="location">Location</a></li>
+                <li><a href="#" id="contact">Contact</a></li>
+            </ul>
+        </div>
+        <div id="search">
+            <form name="searchform" onsubmit="clearinput(); return false">
+            <input type="text" id="searchbar" placeholder="Search...">
+            </form>
+        </div>
+        <div id="images">
+            <input type="image" id="avatar" src="../images/avatar.jpeg" onclick="document.getElementById('loginformcontainer').style.display='block'"/>
+            <a href="Checkout.html"><img id="cart" src="../images/shoppingbag.jpeg" alt="Shopping cart"></a>
+        </div>
+    </div>
+    <div class="container2">
+        <div class="contacttable">
+            <form id="checkoutform" onsubmit="checkBoxes()">
+                <h1>Contact us</h1>
+                <div class="box" id="box1">
+                    <div class="inputBox">
+                        <label for="name">Name :</label><br>
+                        <input type="text" id="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="inputBox">
+                        <label for="phone">Phone number :</label><br>
+                        <input type="number" id="phone" placeholder="1234567890" required>
+                    </div>
+                </div>
+                <div class="box" id="box2">
+                    <div class="inputBox">
+                        <label for="email">Email address :</label><br>
+                        <input type="email" id="email" placeholder="example@example.com" required>
+                    </div>
+                    <div class="inputBox">
+                        <label for="method">Perferred contact method :</label><br>
+                        <span id="method">
+                            <input type="checkbox" class="checkbox" id="method1" name="method1" value="Contact by phone">
+                            <label for="method1"> Contact by phone</label><br>
+                            <input type="checkbox" class="checkbox" id="method2" name="method2" value="Contact by email">
+                            <label for="method2"> Contact by email</label><br>
+                        </span>
+                    </div>
+                </div>
+                <div class="textinput">
+                    <label for="message">What can we help you with?</label><br>
+                    <textarea id="message" placeholder="Example text" required></textarea>
+                </div>
+                <div class="submit">
+                    <input type="submit" value="Submit" class="submit-btn">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

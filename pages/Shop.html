@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Spartan Clothing</title>
+    <link rel="icon" href="../images/logo.jpeg">
+    <link rel="shortcut icon" href="../images/logo.jpeg">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <style>
+        html{
+            height: 100vh;
+        }
+        .container2{
+            padding-top: 110px;
+            width: 100%;
+        }
+        h1{
+            text-align: center;
+            font-family: Almarai;
+            font-weight: 500;
+            font-size: 50px;
+        }
+        .products{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(320px, 1fr));
+        }
+        .products .card{
+            width: 310px;
+            background-color: #ffffff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            border-radius: 10px;
+            padding: 5px;
+            margin-bottom: 20px;
+            margin: 20px;
+        }
+        .products .card img{
+            height: 250px;
+            width: 70%;
+        }
+        .products .card .title{
+            font-weight: 900;
+            font-family: Almarai;
+            font-size: 20px;
+            color: #000;
+            text-align: center;
+        }
+        .products .card .box{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        .products .card .price{
+            font-family: Almarai;
+            font-weight: bold;
+        }
+        .products .card .box .btn{
+            font-size: 13px;
+            font-family: Raleway;
+            padding: 10px 18px;
+            font-weight: 900;
+            background: #fff;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+        .products .card .box .btn:hover{
+            background: #eeeeee;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        history.scrollRestoration = "manual";
+        var cookieString = sessionStorage.getItem("cartitems");
+
+        window.onload = function () {
+            window.scrollTo(0, 0);
+        }
+
+        function clearinput(){
+            document.getElementById("searchbar").value = "";
+        }
+
+        function closeForm(){
+            document.getElementById('loginformcontainer').style.display='none';
+            document.getElementById("user").value = "";
+            document.getElementById("pass").value = "";
+        }
+
+        function checkForm(){
+            if(document.getElementById("user").value == "Ryker"){
+            if(document.getElementById("pass").value == "1234"){
+                document.getElementById('loginformcontainer').style.display='none';
+                document.getElementById("user").value = "";
+                document.getElementById("pass").value = "";
+                alert("Success, you're logged in!");
+            }
+            else{
+                document.getElementById("user").value = "";
+                document.getElementById("pass").value = "";
+                alert("Error, password is incorrect!");
+            }
+            }
+            else{
+            document.getElementById("user").value = "";
+            document.getElementById("pass").value = "";
+            alert("Error, username is incorrect!");
+            }
+        }
+
+        function addCart(pnumber){
+            if(cookieString == ""){
+                cookieString = pnumber;
+            }
+            else{
+                cookieString += "-" + pnumber;
+            }
+            sessionStorage.setItem("cartitems", cookieString);
+            alert("Success, item has been added to cart!");
+        }
+</script>
+</head>
+<body>
+    <div id="loginformcontainer" class="loginformcontainer">
+        <div id="loginform" class="loginform">
+            <div class="close-btn" onclick="closeForm()">&times;</div>
+            <div class="form">
+                <h2>Log in</h2>
+                <div class="form-element">
+                    <label for="user">Username</label>
+                    <input type="text" id="user" placeholder="Enter username">
+                </div>
+                <div class="form-element">
+                    <label for="pass">Password</label>
+                    <input type="password" id="pass" placeholder="Enter password">
+                </div>
+                <div class="form-element">
+                    <input type="checkbox" id="rememberme">
+                    <label for="rememberme">Remember me</label>
+                </div>
+                <div class="form-element">
+                    <button onclick="checkForm()">Sign in</button>
+                </div>
+                <div class="form-element">
+                    <a href="#">Forgot password?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container1">
+        <div id="logo">
+            <img src="../images/banner.jpeg" alt="logo" />
+        </div>
+        <div id="blank">
+        </div>
+        <div id="navbar">
+            <ul>
+                <li><a href="../Index.html" id="home">Home</a></li>
+                <li><a href="#" id="shop">Shop</a></li>
+                <li><a href="About.html" id="about">About</a></li>
+                <li><a href="Location.html" id="location">Location</a></li>
+                <li><a href="Contact.html" id="contact">Contact</a></li>
+            </ul>
+        </div>
+        <div id="search">
+            <form name="searchform" onsubmit="clearinput(); return false">
+            <input type="text" id="searchbar" placeholder="Search...">
+            </form>
+        </div>
+        <div id="images">
+            <input type="image" id="avatar" src="../images/avatar.jpeg" onclick="document.getElementById('loginformcontainer').style.display='block'"/>
+            <a href="Checkout.html"><img id="cart" src="../images/shoppingbag.jpeg" alt="Shopping cart"></a>
+        </div>
+    </div>
+    <div class="container2">
+        <h1>Our Products</h1>
+        <div class="products">
+            <div class="card">
+                <center><div class="img"><img src="../images/hoodie.png" alt="Hoodie"></div></center>
+                <br>
+                <div class="title">Spartan Hoodie</div>
+                    <div class="box">
+                        <div class="price">$40.00</div>
+                        <button class="btn" onclick="addCart(1)">Buy now</button>
+                    </div>
+            </div>
+            <div class="card">
+                <center><div class="img"><img src="../images/longsleeve.png" alt="Longsleeve"></div></center>
+                <br>
+                <div class="title">Spartan Longsleeve</div>
+                    <div class="box">
+                        <div class="price">$30.00</div>
+                        <button class="btn" onclick="addCart(2)">Buy now</button>
+                    </div>
+            </div>
+            <div class="card">
+                <center><div class="img"><img src="../images/cutoff.png" alt="Cutoff"></div></center>
+                <br>
+                <div class="title">Spartan Cutoff</div>
+                    <div class="box">
+                        <div class="price">$25.00</div>
+                        <button class="btn" onclick="addCart(3)">Buy now</button>
+                    </div>
+            </div>
+            <div class="card">
+                <center><div class="img"><img src="../images/waterbottle.png" alt="Water Bottle"></div></center>
+                <br>
+                <div class="title">Spartan Waterbottle</div>
+                    <div class="box">
+                        <div class="price">$15.00</div>
+                        <button class="btn" onclick="addCart(4)">Buy now</button>
+                    </div>
+            </div>
+            <div class="card">
+                <center><div class="img"><img src="../images/hoodie.png" alt="Hoodie"></div></center>
+                <br>
+                <div class="title">Spartan Hoodie</div>
+                    <div class="box">
+                        <div class="price">$40.00</div>
+                        <button class="btn" onclick="addCart(1)">Buy now</button>
+                    </div>
+            </div>
+            <div class="card">
+                <center><div class="img"><img src="../images/longsleeve.png" alt="Longsleeve"></div></center>
+                <br>
+                <div class="title">Spartan Longsleeve</div>
+                    <div class="box">
+                        <div class="price">$30.00</div>
+                        <button class="btn" onclick="addCart(2)">Buy now</button>
+                    </div>
+            </div>
+            <div class="card">
+                <center><div class="img"><img src="../images/cutoff.png" alt="Cutoff"></div></center>
+                <br>
+                <div class="title">Spartan Cutoff</div>
+                    <div class="box">
+                        <div class="price">$25.00</div>
+                        <button class="btn" onclick="addCart(3)">Buy now</button>
+                    </div>
+            </div>
+            <div class="card">
+                <center><div class="img"><img src="../images/waterbottle.png" alt="Water Bottle"></div></center>
+                <br>
+                <div class="title">Spartan Waterbottle</div>
+                    <div class="box">
+                        <div class="price">$15.00</div>
+                        <button class="btn" onclick="addCart(4)">Buy now</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

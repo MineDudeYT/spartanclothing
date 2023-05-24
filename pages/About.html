@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Spartan Clothing</title>
+    <link rel="icon" href="../images/logo.jpeg">
+    <link rel="shortcut icon" href="../images/logo.jpeg">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <style>
+        .container2{
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+        .aboutinformation{
+            background-color: #fff;
+            width: 50%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .box{
+            padding-top: calc((100vh - 400px) / 2);
+            padding-left: 40px;
+            width: 600px;
+            height: 400px;
+            overflow: hidden;
+        }
+        table{
+            width: 1600px;
+            height: 400px;
+            overflow: hidden;
+            padding-top: calc((100% - 1000px) / 2);
+            padding-left: calc((100% - 1600px) / 2);
+        }
+        td{
+            width: 650px;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+        #text{
+            width: 580px;
+        }
+        table h1{
+            font-size: 30px;
+            font-family: Almarai;
+        }
+        table p{
+            font-size: 16px;
+            font-family: Raleway;
+            font-weight: bolder;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        table img{
+            width: 650px;
+            height: 400px;
+        }
+    </style>
+    <script>
+        history.scrollRestoration = "manual";
+
+        window.onload = function () {
+            window.scrollTo(0, 0);
+        }
+
+        function clearinput(){
+            document.getElementById("searchbar").value = "";
+        }
+
+        function closeForm(){
+            document.getElementById('loginformcontainer').style.display='none';
+            document.getElementById("user").value = "";
+            document.getElementById("pass").value = "";
+        }
+
+        function checkForm(){
+            if(document.getElementById("user").value == "Ryker"){
+            if(document.getElementById("pass").value == "1234"){
+                document.getElementById('loginformcontainer').style.display='none';
+                document.getElementById("user").value = "";
+                document.getElementById("pass").value = "";
+                alert("Success, you're logged in!");
+            }
+            else{
+                document.getElementById("user").value = "";
+                document.getElementById("pass").value = "";
+                alert("Error, password is incorrect!");
+            }
+            }
+            else{
+            document.getElementById("user").value = "";
+            document.getElementById("pass").value = "";
+            alert("Error, username is incorrect!");
+            }
+        }
+</script>
+</head>
+<body>
+    <div id="loginformcontainer" class="loginformcontainer">
+        <div id="loginform" class="loginform">
+            <div class="close-btn" onclick="closeForm()">&times;</div>
+            <div class="form">
+                <h2>Log in</h2>
+                <div class="form-element">
+                    <label for="user">Username</label>
+                    <input type="text" id="user" placeholder="Enter username">
+                </div>
+                <div class="form-element">
+                    <label for="pass">Password</label>
+                    <input type="password" id="pass" placeholder="Enter password">
+                </div>
+                <div class="form-element">
+                    <input type="checkbox" id="rememberme">
+                    <label for="rememberme">Remember me</label>
+                </div>
+                <div class="form-element">
+                    <button onclick="checkForm()">Sign in</button>
+                </div>
+                <div class="form-element">
+                    <a href="#">Forgot password?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container1">
+        <div id="logo">
+            <img src="../images/banner.jpeg" alt="logo" />
+        </div>
+        <div id="blank">
+        </div>
+        <div id="navbar">
+            <ul>
+                <li><a href="../Index.html" id="home">Home</a></li>
+                <li><a href="Shop.html" id="shop">Shop</a></li>
+                <li><a href="#" id="about">About</a></li>
+                <li><a href="Location.html" id="location">Location</a></li>
+                <li><a href="Contact.html" id="contact">Contact</a></li>
+            </ul>
+        </div>
+        <div id="search">
+            <form name="searchform" onsubmit="clearinput(); return false">
+            <input type="text" id="searchbar" placeholder="Search...">
+            </form>
+        </div>
+        <div id="images">
+            <input type="image" id="avatar" src="../images/avatar.jpeg" onclick="document.getElementById('loginformcontainer').style.display='block'"/>
+            <a href="Checkout.html"><img id="cart" src="../images/shoppingbag.jpeg" alt="Shopping cart"></a>
+        </div>
+    </div>
+    <div class="container2">
+        <table class="about">
+            <td id="text">
+                <h1>About us</h1>
+                <p>We're Spartan Clothing. Our mission is to unite the lifting community.</p>
+                <p>It's not just our goals that define us. It's what we do to achieve them. Working, sweating, and exhausting ourselves just a little more.</p>
+                <p>Our company began in 2023, from a IP class at Warwick School District with nothing but a computer, Visual Studio Code, and ambitions to hopefully pass the class. Today, we sit here with a half-functioning website that you can enjoy.</p>
+                <p>Our Spartan family consists of now over 1 person (because you're here!). We have 1 online stores stores so far, and we plan to keep it that way.</p>
+                <p>(P.S. Please do not buy anything from our store because it will not come to you...)</p>
+            </td>
+            <td>
+                <img src="../images/guylifting.jpg" alt="Weight room">
+            </td>
+        </table>
+    </div>
+</body>
+</html>
